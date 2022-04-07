@@ -106,7 +106,7 @@ public class Main_renta {
 				Licencia=tecladoCl.nextLine();
 				ObjetoCliente.setLicencia(Licencia);
 				System.out.println("Se capturaron los datos del cliente");
-				
+				Lista_Cliente.add(ObjetoCliente);
 				
 				
 			
@@ -115,26 +115,26 @@ public class Main_renta {
 				System.out.println("Se captura Empleado");
 
 				System.out.println("Se captura el número del empleado");
-				Num_empleado=tecladoCl.nextInt();
+				Num_empleado=tecladoEm.nextInt();
 				ObjetoEmpleado.setTelefono(Cargo);
 				System.out.println("Se captura el nombre del empleado");
-				Nombres=tecladoCl.nextLine();
+				Nombres=tecladoEm.nextLine();
 				ObjetoEmpleado.setNombres(Nombres);
 				System.out.println("Se captura el apellido paterno del empleado");
-				Apellido_P=tecladoCl.nextLine();
+				Apellido_P=tecladoEm.nextLine();
 				ObjetoEmpleado.setApellido_P(Apellido_P);
 				System.out.println("Se captura el apellido materno del empleado");
-				Apellido_M=tecladoCl.nextLine();
+				Apellido_M=tecladoEm.nextLine();
 				ObjetoEmpleado.setApellido_M(Apellido_M);
 				System.out.println("Se captura el correo del empleado");
-				Correo=tecladoCl.nextLine();
+				Correo=tecladoEm.nextLine();
 				ObjetoEmpleado.setCorreo(Correo);
 				System.out.println("Se captura el domicilio del empleado");
-				Domicilio=tecladoCl.nextLine();
+				Domicilio=tecladoEm.nextLine();
 				ObjetoEmpleado.setDomicilio(Domicilio);
 				System.out.println("Se captura la fecha del nacimiento del empleado");
 				try {
-					Fecha=tecladoCl.next();
+					Fecha=tecladoEm.next();
 					Fecha_nac=FormatoFecha.parse(Fecha);
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
@@ -142,16 +142,16 @@ public class Main_renta {
 				}
 				ObjetoEmpleado.setFecha_nac(Fecha_nac);
 				System.out.println("Se captura el sexo del empleado");
-				Sexo=tecladoCl.nextLine();
+				Sexo=tecladoEm.nextLine();
 				ObjetoEmpleado.setSexo(Sexo);
 				System.out.println("Se captura el teléfono del empleado");
-				Telefono=tecladoCl.nextLine();
+				Telefono=tecladoEm.nextLine();
 				ObjetoEmpleado.setTelefono(Telefono);
 				System.out.println("Se captura el cargo del empleado");
-				Cargo=tecladoCl.nextLine();
+				Cargo=tecladoEm.nextLine();
 				ObjetoEmpleado.setCargo(Cargo);
 				System.out.println("Se captura el RFC del empleado");
-				RFC=tecladoCl.nextLine();
+				RFC=tecladoEm.nextLine();
 				ObjetoEmpleado.setRFC(RFC);
 				
 				Lista_Empleado.add(ObjetoEmpleado);
@@ -165,123 +165,127 @@ public class Main_renta {
 			case 3: Terrestres ObjetoTerrestres=new Terrestres();
 				System.out.println("Se captura vehículo terrestre");
 				System.out.println("Se captura el año del vehículo terrestre");
-				Año=tecladoCl.nextInt();
+				Año=tecladoTe.nextInt();
 				ObjetoTerrestres.setAño(Año);
 				System.out.println("Se captura el número de asientos del vehículo terrestre");
-				Asientos=tecladoCl.nextInt();
+				Asientos=tecladoTe.nextInt();
 				ObjetoTerrestres.setAsientos(Asientos);
 				System.out.println("Se captura el color del vehículo terrestre");
-				Color=tecladoCl.nextLine();
+				Color=tecladoTe.nextLine();
 				ObjetoTerrestres.setColor(Color);
 				System.out.println("Se captura el tipo de combustible del vehículo terrestre");
-				Combustible=tecladoCl.nextLine();
+				Combustible=tecladoTe.nextLine();
 				ObjetoTerrestres.setCombustible(Combustible);
 				System.out.println("Se captura la marca del vehículo terrestre");
-				Marca=tecladoCl.nextLine();
+				Marca=tecladoTe.nextLine();
 				ObjetoTerrestres.setMarca(Marca);
 				System.out.println("Se captura el modelo del vehículo terrestre");
-				Modelo=tecladoCl.nextLine();
+				Modelo=tecladoTe.nextLine();
 				ObjetoTerrestres.setModelo(Modelo);
 				System.out.println("Se captura el número de motor del vehículo terrestre");
-				Num_Motor=tecladoCl.nextInt();
+				Num_Motor=tecladoTe.nextInt();
 				ObjetoTerrestres.setNum_Motor(Num_Motor);
 				System.out.println("Se captura el número de serie del vehículo terrestre");
-				Num_Serie=tecladoCl.nextInt();
+				Num_Serie=tecladoTe.nextInt();
 				ObjetoTerrestres.setNum_Serie(Num_Serie);
 				System.out.println("Se captura la poliza del seguro del vehículo terrestre");
-				Poliza_Seguro=tecladoCl.nextInt();
+				Poliza_Seguro=tecladoTe.nextInt();
 				ObjetoTerrestres.setPoliza_Seguro(Poliza_Seguro);
 				System.out.println("Se captura el número de puertas del vehículo terrestre");
-				Puertas=tecladoCl.nextInt();
+				Puertas=tecladoTe.nextInt();
 				ObjetoTerrestres.setPuertas(Puertas);
 				System.out.println("Se captura el tipo del vehículo");
-				tipo_vehiculo=tecladoCl.nextLine();
+				tipo_vehiculo=tecladoTe.nextLine();
 				ObjetoTerrestres.setTipo_vehiculo(tipo_vehiculo);
 				System.out.println("Se captura el número de ejes del vehículo");
-				Num_Ejes=tecladoCl.nextInt();
+				Num_Ejes=tecladoTe.nextInt();
 				ObjetoTerrestres.setNum_Ejes(Num_Ejes);
 				
+				Lista_Terrestres.add(ObjetoTerrestres);
 				
 			
 			case 4:Aereos ObjetoAereos=new Aereos();
 				System.out.println("Se captura vehículo aéreo");
 				System.out.println("Se captura el año del vehículo aéreo");
-				Año=tecladoCl.nextInt();
+				Año=tecladoAe.nextInt();
 				ObjetoAereos.setAño(Año);
 				System.out.println("Se captura el número de asientos del vehículo aéreo");
-				Asientos=tecladoCl.nextInt();
+				Asientos=tecladoAe.nextInt();
 				ObjetoAereos.setAsientos(Asientos);
 				System.out.println("Se captura el color del vehículo aéreo");
-				Color=tecladoCl.nextLine();
+				Color=tecladoAe.nextLine();
 				ObjetoAereos.setColor(Color);
 				System.out.println("Se captura el tipo de combustible del vehículo aéreo");
-				Combustible=tecladoCl.nextLine();
+				Combustible=tecladoAe.nextLine();
 				ObjetoAereos.setCombustible(Combustible);
 				System.out.println("Se captura la marca del vehículo aéreo");
-				Marca=tecladoCl.nextLine();
+				Marca=tecladoAe.nextLine();
 				ObjetoAereos.setMarca(Marca);
 				System.out.println("Se captura el modelo del vehículo aéreo");
-				Modelo=tecladoCl.nextLine();
+				Modelo=tecladoAe.nextLine();
 				ObjetoAereos.setModelo(Modelo);
 				System.out.println("Se captura el número de motor del vehículo aéreo");
-				Num_Motor=tecladoCl.nextInt();
+				Num_Motor=tecladoAe.nextInt();
 				ObjetoAereos.setNum_Motor(Num_Motor);
 				System.out.println("Se captura el número de serie del vehículo aéreo");
-				Num_Serie=tecladoCl.nextInt();
+				Num_Serie=tecladoAe.nextInt();
 				ObjetoAereos.setNum_Serie(Num_Serie);
 				System.out.println("Se captura la poliza del seguro del vehículo aéreo");
-				Poliza_Seguro=tecladoCl.nextInt();
+				Poliza_Seguro=tecladoAe.nextInt();
 				ObjetoAereos.setPoliza_Seguro(Poliza_Seguro);
 				System.out.println("Se captura el número de puertas del vehículo aéreo");
-				Puertas=tecladoCl.nextInt();
+				Puertas=tecladoAe.nextInt();
 				ObjetoAereos.setPuertas(Puertas);
 				System.out.println("Se captura el tipo del vehículo");
-				tipo_vehiculo=tecladoCl.nextLine();
+				tipo_vehiculo=tecladoAe.nextLine();
 				ObjetoAereos.setTipo_vehiculo(tipo_vehiculo);
 				System.out.println("Se captura el tipo del vehículo");
-				num_élices=tecladoCl.nextInt();
+				num_élices=tecladoAe.nextInt();
 				ObjetoAereos.setNum_élices(num_élices);
 				
+				Lista_Aereos.add(ObjetoAereos);
 				
 				
 			case 5: Acuaticos ObjetoAcuaticos= new Acuaticos();
 				System.out.println("Se captura vehículo acuático");
 				System.out.println("Se captura el año del vehículo acuático");
-				Año=tecladoCl.nextInt();
+				Año=tecladoAc.nextInt();
 				ObjetoAcuaticos.setAño(Año);
 				System.out.println("Se captura el número de asientos del vehículo acuático");
-				Asientos=tecladoCl.nextInt();
+				Asientos=tecladoAc.nextInt();
 				ObjetoAcuaticos.setAsientos(Asientos);
 				System.out.println("Se captura el color del vehículo acuático");
-				Color=tecladoCl.nextLine();
+				Color=tecladoAc.nextLine();
 				ObjetoAcuaticos.setColor(Color);
 				System.out.println("Se captura el tipo de combustible del vehículo acuático");
-				Combustible=tecladoCl.nextLine();
+				Combustible=tecladoAc.nextLine();
 				ObjetoAcuaticos.setCombustible(Combustible);
 				System.out.println("Se captura la marca del vehículo acuático");
-				Marca=tecladoCl.nextLine();
+				Marca=tecladoAc.nextLine();
 				ObjetoAcuaticos.setMarca(Marca);
 				System.out.println("Se captura el modelo del vehículo acuático");
-				Modelo=tecladoCl.nextLine();
+				Modelo=tecladoAc.nextLine();
 				ObjetoAcuaticos.setModelo(Modelo);
 				System.out.println("Se captura el número de motor del vehículo acuático");
-				Num_Motor=tecladoCl.nextInt();
+				Num_Motor=tecladoAc.nextInt();
 				ObjetoAcuaticos.setNum_Motor(Num_Motor);
 				System.out.println("Se captura el número de serie del vehículo acuático");
-				Num_Serie=tecladoCl.nextInt();
+				Num_Serie=tecladoAc.nextInt();
 				ObjetoAcuaticos.setNum_Serie(Num_Serie);
 				System.out.println("Se captura la poliza del seguro del vehículo acuático");
-				Poliza_Seguro=tecladoCl.nextInt();
+				Poliza_Seguro=tecladoAc.nextInt();
 				ObjetoAcuaticos.setPoliza_Seguro(Poliza_Seguro);
 				System.out.println("Se captura el número de puertas del vehículo acuático");
-				Puertas=tecladoCl.nextInt();
+				Puertas=tecladoAc.nextInt();
 				ObjetoAcuaticos.setPuertas(Puertas);
 				System.out.println("Se captura el tipo del vehículo");
-				tipo_vehiculo=tecladoCl.nextLine();
+				tipo_vehiculo=tecladoAc.nextLine();
 				ObjetoAcuaticos.setTipo_vehiculo(tipo_vehiculo);
 				System.out.println("Se captura el tipo del vehículo");
-				num_turbinas=tecladoCl.nextInt();
+				num_turbinas=tecladoAc.nextInt();
 				ObjetoAcuaticos.setNum_turbinas(num_turbinas);
+				
+				Lista_Acuaticos.add(ObjetoAcuaticos);
 				
 				
 				
@@ -289,14 +293,16 @@ public class Main_renta {
 			case 6: registrorenta Objetoregistrorenta=new registrorenta();
 			System.out.println("Se captura renta de un vehículo");
 			System.out.println("Se captura el estatus de la renta");
-			Estatus=tecladoCl.nextLine();
+			Estatus=tecladoRe.nextLine();
 			Objetoregistrorenta.setEstatus(Estatus);
 			System.out.println("Se captura el registro de la renta");
-			Registrorenta=tecladoCl.nextLine();
+			Registrorenta=tecladoRe.nextLine();
 			Objetoregistrorenta.setRegistrorenta(Registrorenta);
 			System.out.println("Se captura el tipo del vehículo");
-			Registrorenta=tecladoCl.nextLine();
-			Objetoregistrorenta.setRegistrorenta(Registrorenta);
+			renta_vehiculo=tecladoRe.nextInt();
+			Objetoregistrorenta.setRenta_vehiculo(renta_vehiculo);
+			
+			Lista_registrorenta.add(Objetoregistrorenta);
 			
 			
 			
