@@ -1,9 +1,24 @@
 package codigofuente;
+/*
+ * ISC5-1 Juan Jaime Fuentes Uriarte.
+ * Fundamentos de Programación Orientada a Objetos.
+ * Cristal Yoselin Aguilar Nolazco (200100056)
+ * Elsa Edith Llanes Luna (200100090)
+ * Manuel Alberto Aguirre Silvas (200100055)
+ * Contexto: Se desea realizar un sistema de renta de vehículos de todo tipo para un empresario,
+ * los cuales se dividen principalmente en vehículos terrestres, aéreos y acuáticos.
+ */
+//Nota importante: Se decidió colocar como atributo una variable distinta de número de serie en cada objeto que hereda para validar en cada subproceso
+//Lo mismo se hizo en registrorenta a fin de almacenar el número de serie del vehículo
+//Nos habría alegrado que nos recordara que se usan otros métodos para comparar variables String. Descubrir ese detalle nos llevo horas de análisis.
+//Por tal razon algunas variables que podrían tener números y letras solo aceptarán letras.
 
 import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Main_renta {
+
+	//Declaramos nuestros Arraylist y variables públicas.
 	public static ArrayList<Acuaticos> Lista_Acuaticos = new ArrayList<Acuaticos>();
 	public static ArrayList<Aereos> Lista_Aereos = new ArrayList<Aereos>();
 	public static ArrayList<Terrestres> Lista_Terrestres = new ArrayList<Terrestres>();
@@ -14,6 +29,7 @@ public class Main_renta {
 	
 
 	public static void main(String[] args) {
+		//Declaramos las variables locales que utilizaremos en todo el programa.
 		Scanner teclado = new Scanner(System.in);
 		Scanner tecladoAc = new Scanner(System.in);
 		Scanner tecladoAe = new Scanner(System.in);
@@ -57,9 +73,9 @@ public class Main_renta {
 
 		// Generaremos un ciclo que nos permita manipular
 		// los objetos y la informacion que daremos de alta
-		int opc = 0; // variable que permitira capturar información
+		int opc = 0; // variable que permitirá seleccionar qué queremos hacer.
 
-		do {
+		do {//Mostramos un Menu
 			System.out.println("Dame una opción a realizar");
 			System.out.println("1.-para capturar clientes");
 			System.out.println("2.-para capturar empleado");
@@ -69,8 +85,8 @@ public class Main_renta {
 			System.out.println("6.-para capturar una renta");
 			System.out.println("0.-para salir");
 			opc = teclado.nextInt();
-			switch (opc) {
-			case 1:
+			switch (opc) {//Utilizamos switch para dar opciones según quiera realizar el usuario.
+			case 1://Opción para dar de alta un cliente
 				Cliente ObjetoCliente = new Cliente();
 
 				System.out.println("Nombre del cliente");
@@ -101,7 +117,7 @@ public class Main_renta {
 				Lista_Cliente.add(ObjetoCliente);
 				break;
 
-			case 2:
+			case 2://Opción para dar de alta un empleado
 				Empleado ObjetoEmpleado = new Empleado();
 
 				System.out.println("Se captura el número del empleado");
@@ -138,7 +154,7 @@ public class Main_renta {
 				Lista_Empleado.add(ObjetoEmpleado);
 				break;
 
-			case 3:
+			case 3://Opción para dar de alta un vehículo terrestre
 				Terrestres ObjetoTerrestres = new Terrestres();
 
 				System.out.println("Año del vehículo terrestre");
@@ -175,7 +191,7 @@ public class Main_renta {
 				Lista_Terrestres.add(ObjetoTerrestres);
 				break;
 
-			case 4:
+			case 4://Opción para dar de alta un vehículo aéreo
 				Aereos ObjetoAereos = new Aereos();
 
 				System.out.println("Año del vehículo aéreo");
@@ -212,7 +228,7 @@ public class Main_renta {
 				Lista_Aereos.add(ObjetoAereos);
 				break;
 
-			case 5:
+			case 5://Opción para dar de alta un vehículo acuático
 				Acuaticos ObjetoAcuaticos = new Acuaticos();
 
 				System.out.println("Año del vehículo acuático");
@@ -249,14 +265,14 @@ public class Main_renta {
 				Lista_Acuaticos.add(ObjetoAcuaticos);
 				break;
 
-			case 6:
+			case 6://Opción para dar de alta una renta y validar datos
 				
 
 				System.out.println("Estatus de la renta");
 				Estatus = tecladoRe.next();
 				System.out.println("Número del empleado");
 				NumEmpleado = tecladoRe.nextInt();
-				Respuesta = ValidaEmpleado(NumEmpleado, Lista_Empleado);
+				Respuesta = ValidaEmpleado(NumEmpleado, Lista_Empleado);//Se llama a un subproceso que valide si existe el empleado
 				if (Respuesta == true) {
 			
 					
@@ -268,7 +284,7 @@ public class Main_renta {
 				break;}
 				System.out.println("Licencia del cliente");
 				LicenciaCl = tecladoRe.nextInt();
-				Respuesta=ValidaCliente(LicenciaCl, Lista_Cliente);
+				Respuesta=ValidaCliente(LicenciaCl, Lista_Cliente);//Se llama a un subproceso que valide si existe el cliente
 				if (Respuesta == true) {
 					
 			
@@ -286,7 +302,7 @@ public class Main_renta {
 				NumSerie = tecladoRe.nextInt();
 				
 
-				int opcion = 0;
+				int opcion = 0;//Opcion que nos permitirá elegir que tipo de vehículo es para que valide en su propio Arraylist si está disponible
 				System.out.println("Para validar existencia inserta;");
 				System.out.println("1: Si es un vehículo terrestre");
 				System.out.println("2: Si es vehículo aéreo");
@@ -295,7 +311,7 @@ public class Main_renta {
 				opcion = tecladoRe.nextInt();
 				if(opcion==1) {
 					
-						Respuesta = Validaterrestres(NumSerie, Lista_Terrestres);
+						Respuesta = Validaterrestres(NumSerie, Lista_Terrestres);//Se llama a un subproceso que valide si existe el vehículo terrestre
 						if (Respuesta == true) {
 							System.out.println("Se ha registrado la renta correctamente");
 
@@ -305,7 +321,7 @@ public class Main_renta {
 						}
 						}else if(opcion==2) {
 					
-						Respuesta = Validaaereos(NumSerie, Lista_Aereos);
+						Respuesta = Validaaereos(NumSerie, Lista_Aereos);//Se llama a un subproceso que valide si existe el vehículo aéreo
 						if (Respuesta == true) {
 							System.out.println("Se ha registrado la renta correctamente");
 
@@ -315,7 +331,7 @@ public class Main_renta {
 						}
 						}else if(opcion==3) {
 					
-						Respuesta = Validaacuaticos(NumSerie, Lista_Acuaticos);
+						Respuesta = Validaacuaticos(NumSerie, Lista_Acuaticos);//Se llama a un subproceso que valide si existe el vehículo acuático
 						if (Respuesta == true) {
 							
 							System.out.println("Se ha registrado la renta correctamente");
@@ -326,13 +342,13 @@ public class Main_renta {
 						}
 
 					}
-				registrorenta Objetoregistrorenta = new registrorenta();
+				registrorenta Objetoregistrorenta = new registrorenta();//Damos de a
 				Objetoregistrorenta.setEstatus(Estatus);
 				Objetoregistrorenta.setLicenciaCl(LicenciaCl);
 				Objetoregistrorenta.setNumEmpleado(NumEmpleado);
 				Objetoregistrorenta.setFecha(Fecha);
 				Objetoregistrorenta.setNumSerie(NumSerie);
-				Lista_registrorenta.add(Objetoregistrorenta);
+				Lista_registrorenta.add(Objetoregistrorenta);//Damos de alta
 				
 				
 
@@ -341,7 +357,7 @@ public class Main_renta {
 			}
 		} while (opc != 0);
 
-	}
+	}//A continuación se muestran cada uno de los subprocesos según las necesidades.
 	
 	public static boolean ValidaEmpleado(int NumEmpleado, ArrayList<Empleado> Lista_Empleado) {
 		Respuesta=false;
