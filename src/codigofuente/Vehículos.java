@@ -6,84 +6,71 @@ public class Vehículos {
 
 	
 	
-	public static String tipo_vehiculo;
-	public static String Marca;
-	public static String Modelo;
-	public static String Color;
-	public static String Combustible;
-	public static int Año;
-	public static int Puertas;
-	public static int Asientos;
-	public static int Num_Serie;
-	public static int Num_Motor;
+	public String Marca;
+	public String Modelo;
+	public String Color;
+	public String Combustible;
+	public int Año;
+	public int Puertas;
+	public int Asientos;
+	public String Num_Serie;
 	public static int Poliza_Seguro;
 	
 	//Generar métodos mediante Getters and Setters
 	
-	public static String getTipo_vehiculo() {
-		return tipo_vehiculo;
-	}
-	public static void setTipo_vehiculo(String tipo_vehiculo) {
-		Vehículos.tipo_vehiculo = tipo_vehiculo;
-	}
-	public static String getMarca() {
+	
+	public String getMarca() {
 		return Marca;
 	}
-	public static void setMarca(String marca) {
+	public void setMarca(String marca) {
 		Marca = marca;
 	}
-	public static String getModelo() {
+	public String getModelo() {
 		return Modelo;
 	}
-	public static void setModelo(String modelo) {
+	public void setModelo(String modelo) {
 		Modelo = modelo;
 	}
-	public static String getColor() {
+	public String getColor() {
 		return Color;
 	}
-	public static void setColor(String color) {
+	public void setColor(String color) {
 		Color = color;
 	}
-	public static String getCombustible() {
+	public String getCombustible() {
 		return Combustible;
 	}
-	public static void setCombustible(String combustible) {
+	public void setCombustible(String combustible) {
 		Combustible = combustible;
 	}
-	public static int getAño() {
+	public int getAño() {
 		return Año;
 	}
-	public static void setAño(int año) {
+	public void setAño(int año) {
 		Año = año;
 	}
-	public static int getPuertas() {
+	public int getPuertas() {
 		return Puertas;
 	}
-	public static void setPuertas(int puertas) {
+	public void setPuertas(int puertas) {
 		Puertas = puertas;
 	}
-	public static int getAsientos() {
+	public int getAsientos() {
 		return Asientos;
 	}
-	public static void setAsientos(int asientos) {
+	public void setAsientos(int asientos) {
 		Asientos = asientos;
 	}
-	public static int getNum_Serie() {
+	public String getNum_Serie() {
 		return Num_Serie;
 	}
-	public static void setNum_Serie(int num_Serie) {
+	public void setNum_Serie(String num_Serie) {
 		Num_Serie = num_Serie;
 	}
-	public static int getNum_Motor() {
-		return Num_Motor;
-	}
-	public static void setNum_Motor(int num_Motor) {
-		Num_Motor = num_Motor;
-	}
-	public static int getPoliza_Seguro() {
+	public int getPoliza_Seguro() {
 		return Poliza_Seguro;
 	}
-	public static void setPoliza_Seguro(int poliza_Seguro) {
+	public void setPoliza_Seguro(int poliza_Seguro) {
 		Poliza_Seguro = poliza_Seguro;
 	}
 	

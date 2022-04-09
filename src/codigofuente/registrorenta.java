@@ -1,31 +1,46 @@
 
 package codigofuente;
 
+
 public class registrorenta {
 	
-	public static int renta_vehiculo;
-	public static String Registrorenta;
-	public static String Estatus;
-	
-	
-	public static int getRenta_vehiculo() {
-		return renta_vehiculo;
+	public int NumEmpleado;
+	public String NombreCl;
+	public String Fecha;
+	public String NumSerie;
+	public String Estatus;
+	public int getNumEmpleado() {
+		return NumEmpleado;
 	}
-	public static void setRenta_vehiculo(int renta_vehiculo) {
-		registrorenta.renta_vehiculo = renta_vehiculo;
+	public void setNumEmpleado(int numEmpleado) {
+		NumEmpleado = numEmpleado;
 	}
-	public static String getRegistrorenta() {
-		return Registrorenta;
+	public String getNombreCl() {
+		return NombreCl;
 	}
-	public static void setRegistrorenta(String registrorenta) {
-		Registrorenta = registrorenta;
+	public void setNombreCl(String nombreCl) {
+		NombreCl = nombreCl;
 	}
-	public static String getEstatus() {
+	public String getFecha() {
+		return Fecha;
+	}
+	public void setFecha(String fecha) {
+		Fecha = fecha;
+	}
+	public String getNumSerie() {
+		return NumSerie;
+	}
+	public void setNumSerie(String numSerie) {
+		NumSerie = numSerie;
+	}
+	public String getEstatus() {
 		return Estatus;
 	}
-	public static void setEstatus(String estatus) {
+	public void setEstatus(String estatus) {
 		Estatus = estatus;
 	}
+	
+	
 	
 	
 

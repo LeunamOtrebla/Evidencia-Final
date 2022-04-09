@@ -7,22 +7,22 @@ public class Empleado extends Personas {
 	public static int Num_empleado;
 	
 	
-		public static String getRFC() {
+		public String getRFC() {
 		return RFC;
 	}
-		public static void setRFC(String rFC) {
+		public void setRFC(String rFC) {
 		RFC = rFC;
 	}
-		public static String getCargo() {
+		public String getCargo() {
 		return Cargo;
 	}
-		public static void setCargo(String cargo) {
+		public void setCargo(String cargo) {
 		Cargo = cargo;
 	}
-		public static int getNum_empleado() {
+		public int getNum_empleado() {
 		return Num_empleado;
 	}
-		public static void setNum_empleado(int num_empleado) {
+		public void setNum_empleado(int num_empleado) {
 		Num_empleado = num_empleado;
 	}
 	

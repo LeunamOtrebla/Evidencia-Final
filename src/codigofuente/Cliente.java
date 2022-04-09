@@ -6,11 +6,11 @@ public class Cliente extends Personas {
 
 	
 	
-		public static String getLicencia() {
+		public String getLicencia() {
 		return Licencia;
 	}
 
-		public static void setLicencia(String licencia) {
+		public void setLicencia(String licencia) {
 		Licencia = licencia;
 	}
 	
