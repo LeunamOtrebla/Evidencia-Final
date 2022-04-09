@@ -2,15 +2,15 @@ package codigofuente;
 
 public class Cliente extends Personas {
 
-	public static String Licencia;
+	public static int Licencia;
 
 	
 	
-		public String getLicencia() {
+		public int getLicencia() {
 		return Licencia;
 	}
 
-		public void setLicencia(String licencia) {
+		public void setLicencia(int licencia) {
 		Licencia = licencia;
 	}
 	

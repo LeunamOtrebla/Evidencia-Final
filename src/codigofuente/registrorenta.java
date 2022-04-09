@@ -5,9 +5,9 @@ package codigofuente;
 public class registrorenta {
 	
 	public int NumEmpleado;
-	public String Licencia;
+	public int LicenciaCl;
 	public String Fecha;
-	public String NumSerie;
+	public int NumSerie;
 	public String Estatus;
 	public int getNumEmpleado() {
 		return NumEmpleado;
@@ -15,11 +15,11 @@ public class registrorenta {
 	public void setNumEmpleado(int numEmpleado) {
 		NumEmpleado = numEmpleado;
 	}
-	public String getLicencia() {
-		return Licencia;
+	public int getLicenciaCl() {
+		return LicenciaCl;
 	}
-	public void setLicencia(String licencia) {
-		Licencia = licencia;
+	public void setLicenciaCl(int licenciaCl) {
+		LicenciaCl = licenciaCl;
 	}
 	public String getFecha() {
 		return Fecha;
@@ -27,10 +27,10 @@ public class registrorenta {
 	public void setFecha(String fecha) {
 		Fecha = fecha;
 	}
-	public String getNumSerie() {
+	public int getNumSerie() {
 		return NumSerie;
 	}
-	public void setNumSerie(String numSerie) {
+	public void setNumSerie(int numSerie) {
 		NumSerie = numSerie;
 	}
 	public String getEstatus() {

@@ -3,13 +3,13 @@ package codigofuente;
 public class Acuaticos extends Vehículos {
 
 	public static int num_turbinas;
-	public String NumSerieAc;
+	public int NumSerieAc;
 
-	public String getNumSerieAc() {
+	public int getNumSerieAc() {
 		return NumSerieAc;
 	}
 
-	public void setNumSerieAc(String numSerieAc) {
+	public void setNumSerieAc(int numSerieAc) {
 		NumSerieAc = numSerieAc;
 	}
 

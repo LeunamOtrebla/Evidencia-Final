@@ -2,13 +2,13 @@ package codigofuente;
 
 public class Aereos extends Vehículos {
 	public static int num_élices;
-	public String NumSerieAe;
+	public int NumSerieAe;
 
-	public String getNumSerieAe() {
+	public int getNumSerieAe() {
 		return NumSerieAe;
 	}
 
-	public void setNumSerieAe(String numSerieAe) {
+	public void setNumSerieAe(int numSerieAe) {
 		NumSerieAe = numSerieAe;
 	}
 

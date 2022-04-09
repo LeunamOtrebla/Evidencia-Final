@@ -2,13 +2,13 @@ package codigofuente;
 
 public class Terrestres extends Vehículos {
 	public static int Num_Ejes;
-	public String NumSerieTe;
+	public int NumSerieTe;
 
-	public String getNumSerieTe() {
+	public int getNumSerieTe() {
 		return NumSerieTe;
 	}
 
-	public void setNumSerieTe(String numSerieTe) {
+	public void setNumSerieTe(int numSerieTe) {
 		NumSerieTe = numSerieTe;
 	}
 
