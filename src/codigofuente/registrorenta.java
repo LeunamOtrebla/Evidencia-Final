@@ -5,7 +5,7 @@ package codigofuente;
 public class registrorenta {
 	
 	public int NumEmpleado;
-	public String NombreCl;
+	public String Licencia;
 	public String Fecha;
 	public String NumSerie;
 	public String Estatus;
@@ -15,11 +15,11 @@ public class registrorenta {
 	public void setNumEmpleado(int numEmpleado) {
 		NumEmpleado = numEmpleado;
 	}
-	public String getNombreCl() {
-		return NombreCl;
+	public String getLicencia() {
+		return Licencia;
 	}
-	public void setNombreCl(String nombreCl) {
-		NombreCl = nombreCl;
+	public void setLicencia(String licencia) {
+		Licencia = licencia;
 	}
 	public String getFecha() {
 		return Fecha;

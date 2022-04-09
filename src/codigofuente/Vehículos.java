@@ -13,7 +13,6 @@ public class Vehículos {
 	public int Año;
 	public int Puertas;
 	public int Asientos;
-	public String Num_Serie;
 	public static int Poliza_Seguro;
 	
 	//Generar métodos mediante Getters and Setters
@@ -60,12 +59,6 @@ public class Vehículos {
 	}
 	public void setAsientos(int asientos) {
 		Asientos = asientos;
-	}
-	public String getNum_Serie() {
-		return Num_Serie;
-	}
-	public void setNum_Serie(String num_Serie) {
-		Num_Serie = num_Serie;
 	}
 	public int getPoliza_Seguro() {
 		return Poliza_Seguro;

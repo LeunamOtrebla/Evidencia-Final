@@ -11,6 +11,7 @@ public class Main_renta {
 	public static ArrayList<Empleado> Lista_Empleado = new ArrayList<Empleado>();
 	public static ArrayList<Cliente> Lista_Cliente = new ArrayList<Cliente>();
 	public static boolean Respuesta= false;
+	
 
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
@@ -33,7 +34,6 @@ public class Main_renta {
 		String RFC = "";
 		String Licencia = "";
 		String Fecha_nac = "";
-		String NombreCl = "";
 		String Estatus = "";
 		String Marca = "";
 		String Modelo = "";
@@ -42,11 +42,13 @@ public class Main_renta {
 		int Año = 0;
 		int Puertas = 0;
 		int Asientos = 0;
-		String Num_Serie = "";
 		int Poliza_Seguro = 0;
 		int num_turbinas = 0;
 		int num_élices = 0;
 		int Num_Ejes = 0;
+		String NumSerieAc="";
+		String NumSerieAe="";
+		String NumSerieTe="";
 		String NumSerie="";
 		int NumEmpleado=0;
 		
@@ -157,8 +159,8 @@ public class Main_renta {
 				Modelo = tecladoTe.next();
 				ObjetoTerrestres.setModelo(Modelo);
 				System.out.println("Número de serie del vehículo terrestre");
-				Num_Serie = tecladoTe.next();
-				ObjetoTerrestres.setNum_Serie(Num_Serie);
+				NumSerieTe = tecladoTe.next();
+				ObjetoTerrestres.setNumSerieTe(NumSerieTe);
 				System.out.println("Poliza del seguro del vehículo terrestre");
 				Poliza_Seguro = tecladoTe.nextInt();
 				ObjetoTerrestres.setPoliza_Seguro(Poliza_Seguro);
@@ -194,8 +196,8 @@ public class Main_renta {
 				Modelo = tecladoAe.next();
 				ObjetoAereos.setModelo(Modelo);
 				System.out.println("Número de serie del vehículo aéreo");
-				Num_Serie = tecladoAe.next();
-				ObjetoAereos.setNum_Serie(Num_Serie);
+				NumSerieAe = tecladoAe.next();
+				ObjetoAereos.setNumSerieAe(NumSerieAe);
 				System.out.println("Poliza del seguro del vehículo aéreo");
 				Poliza_Seguro = tecladoAe.nextInt();
 				ObjetoAereos.setPoliza_Seguro(Poliza_Seguro);
@@ -231,8 +233,8 @@ public class Main_renta {
 				Modelo = tecladoAc.next();
 				ObjetoAcuaticos.setModelo(Modelo);
 				System.out.println("Número de serie del vehículo acuático");
-				Num_Serie = tecladoAc.next();
-				ObjetoAcuaticos.setNum_Serie(Num_Serie);
+				NumSerieAc = tecladoAc.next();
+				ObjetoAcuaticos.setNumSerieAc(NumSerieAc);
 				System.out.println("Poliza del seguro del vehículo acuático");
 				Poliza_Seguro = tecladoAc.nextInt();
 				ObjetoAcuaticos.setPoliza_Seguro(Poliza_Seguro);
@@ -247,41 +249,53 @@ public class Main_renta {
 				break;
 
 			case 6:
-				registrorenta Objetoregistrorenta = new registrorenta();
+				
 
 				System.out.println("Estatus de la renta");
 				Estatus = tecladoRe.next();
-				Objetoregistrorenta.setEstatus(Estatus);
-				System.out.println("Nombre(exacto) del cliente");
-				NombreCl = tecladoRe.next();
-				Objetoregistrorenta.setNombreCl(NombreCl);
 				System.out.println("Número del empleado");
 				NumEmpleado = tecladoRe.nextInt();
-				Objetoregistrorenta.setNumEmpleado(NumEmpleado);
+				Respuesta = ValidaEmpleado(NumEmpleado, Lista_Empleado);
+				if (Respuesta == true) {
+			
+					
+					System.out.println("El empleado existe");
+
+				} else {
+					System.out.println("El empleado no existe, regístralo");
+
+				break;}
+				System.out.println("Licencia del cliente");
+				Licencia = tecladoRe.next();
+				Respuesta=ValidaCliente(Licencia, Lista_Cliente);
+				if (Respuesta == true) {
+					
+			
+					System.out.println("El cliente existe");
+
+				} else {
+					System.out.println("El cliente no existe, regístralo");
+
+				break;}
+				
 				System.out.println("Se captura la fecha de la renta con este formato 'dd/mm/yyyy'");
 				Fecha = tecladoRe.next();
-				Objetoregistrorenta.setFecha(Fecha);
+				
 				System.out.println("Se captura el número de serie del vehículo");
 				NumSerie = tecladoRe.next();
 				
-				Objetoregistrorenta.setNumSerie(NumSerie);
 
-				int opcion = 4;
-				System.out.println(
-						"Para validar existencia inserta 1: Si es vehículo terrestre, 2: Si es vehículo aereo y 3: Si es vehiculo acuático");
+				int opcion = 0;
+				System.out.println("Para validar existencia inserta;");
+				System.out.println("1: Si es un vehículo terrestre");
+				System.out.println("2: Si es vehículo aéreo");
+				System.out.println("3: Si es vehiculo acuático");
+				
 				opcion = tecladoRe.nextInt();
-				if(opcion==0){
+				if(opcion==1) {
 					
-						System.out.println(
-								"Ese número no está dispoblible, seleccione uno de los que se muestran a continuación:");
-						System.out.println(
-								"Para validar existencia inserta 1: Si es vehículo terrestre, 2: Si es vehículo aereo y 3: Si es vehiculo acuático");
-						opcion = tecladoRe.nextInt();
-				}else if(opcion==1) {
-					
-						Respuesta = Validaterrestres(Objetoregistrorenta.NumSerie, Lista_Terrestres);
+						Respuesta = Validaterrestres(NumSerie, Lista_Terrestres);
 						if (Respuesta == true) {
-							Lista_registrorenta.add(Objetoregistrorenta);
 							System.out.println("Se ha registrado la renta correctamente");
 
 						} else {
@@ -292,7 +306,6 @@ public class Main_renta {
 					
 						Respuesta = Validaaereos(NumSerie, Lista_Aereos);
 						if (Respuesta == true) {
-							Lista_registrorenta.add(Objetoregistrorenta);
 							System.out.println("Se ha registrado la renta correctamente");
 
 						} else {
@@ -301,9 +314,9 @@ public class Main_renta {
 						}
 						}else if(opcion==3) {
 					
-						Respuesta = Validaacuaticos(Num_Serie, Lista_Acuaticos);
+						Respuesta = Validaacuaticos(NumSerie, Lista_Acuaticos);
 						if (Respuesta == true) {
-							Lista_registrorenta.add(Objetoregistrorenta);
+							
 							System.out.println("Se ha registrado la renta correctamente");
 
 						} else {
@@ -312,6 +325,14 @@ public class Main_renta {
 						}
 
 					}
+				registrorenta Objetoregistrorenta = new registrorenta();
+				Objetoregistrorenta.setEstatus(Estatus);
+				Objetoregistrorenta.setLicencia(Licencia);
+				Objetoregistrorenta.setNumEmpleado(NumEmpleado);
+				Objetoregistrorenta.setFecha(Fecha);
+				Objetoregistrorenta.setNumSerie(NumSerie);
+				Lista_registrorenta.add(Objetoregistrorenta);
+				
 				
 
 				System.out.println("El proceso ha terminado");
@@ -320,39 +341,63 @@ public class Main_renta {
 		} while (opc != 0);
 
 	}
-
-	public static boolean Validaterrestres(String NumSerie, ArrayList<Terrestres> Lista_Terrestres) {
-		boolean Resultado = false;
-		for (int x = 0; x < Lista_Terrestres.size(); x++) {
-			if (Lista_Terrestres.get(x).getNum_Serie() == NumSerie) {
-				Resultado = true;
+	public static boolean ValidaCliente(String Licencia, ArrayList<Cliente> Lista_Cliente) {
+		Respuesta=false;
+		for (int x = 0; x < Lista_Cliente.size(); x++) {
+			if (Lista_Cliente.get(x).getLicencia() == Licencia) {
+				Respuesta = true;
+				;
 				
 			}
 		}
-		return Resultado;
+		return Respuesta;
+
+	}
+	public static boolean ValidaEmpleado(int NumEmpleado, ArrayList<Empleado> Lista_Empleado) {
+		Respuesta=false;
+		for (int x = 0; x < Lista_Empleado.size(); x++) {
+			if (Lista_Empleado.get(x).getNum_empleado() == NumEmpleado) {
+				Respuesta = true;
+				
+			}
+		}
+		return Respuesta;
+
+	}
+
+	public static boolean Validaterrestres(String NumSerie, ArrayList<Terrestres> Lista_Terrestres) {
+		Respuesta=false;
+		for (int x = 0; x < Lista_Terrestres.size(); x++) {
+			if (Lista_Terrestres.get(x).getNumSerieTe() == NumSerie) {
+				Respuesta = true;
+				
+			}
+		}
+		return Respuesta;
 	}
 
 	public static boolean Validaaereos(String NumSerie, ArrayList<Aereos> Lista_Aereos) {
+		Respuesta=false;
 
-		boolean Resultado = false;
 		for (int x = 0; x < Lista_Aereos.size(); x++) {
-			if (Lista_Aereos.get(x).getNum_Serie() == NumSerie) {
-				Resultado = true;
+			if (Lista_Aereos.get(x).getNumSerieAe() == NumSerie) {
+				Respuesta = true;
 				
 			}
 		}
-		return Resultado;
+		return Respuesta;
 	}
 
 	public static boolean Validaacuaticos(String NumSerie, ArrayList<Acuaticos> Lista_Acuaticos) {
-		boolean Resultado = false;
+		Respuesta=false;
+		
 		for (int x = 0; x < Lista_Acuaticos.size(); x++) {
-			if (Lista_Acuaticos.get(x).getNum_Serie() == NumSerie) {
-				Resultado = true;
+			if (Lista_Acuaticos.get(x).getNumSerieAc() == NumSerie) {
+				Respuesta = true;
 				
 			}
 		}
-		return Resultado;
+		return Respuesta;
 
 	}
 
